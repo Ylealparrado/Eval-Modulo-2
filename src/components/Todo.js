@@ -18,7 +18,7 @@ export default function Todo(props) {
 
   const wasEditing = usePrevious(isEditing);
 
-  function handleChange(e) {
+  /*function handleChange(e) {
     setNewName(e.target.value);
   }
 
@@ -30,9 +30,9 @@ export default function Todo(props) {
     props.editTask(props.id, newName);
     setNewName("");
     setEditing(false);
-  }
+  }*/
 
-  const editingTemplate = (
+  /*const editingTemplate = (
     <form className="stack-small" onSubmit={handleSubmit}>
       <div className="form-group">
         <label className="todo-label" htmlFor={props.id}>
@@ -63,17 +63,11 @@ export default function Todo(props) {
         </button>
       </div>
     </form>
-  );
+  );*/
 
   const viewTemplate = (
     <div className="stack-small">
-      <div className="c-cb">
-          <input
-            id={props.id}
-            type="checkbox"
-            defaultChecked={props.completed}
-            onChange={() => props.toggleTaskCompleted(props.id)}
-          />
+      <div>
           <label className="todo-label" htmlFor={props.id}>
             {props.name}
           </label>
@@ -102,5 +96,5 @@ export default function Todo(props) {
   }, [wasEditing, isEditing]);
 
 
-  return <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>;
+  return <li className="todo">{ viewTemplate}</li>;
 }
