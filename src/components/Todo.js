@@ -18,52 +18,7 @@ export default function Todo(props) {
 
   const wasEditing = usePrevious(isEditing);
 
-  /*function handleChange(e) {
-    setNewName(e.target.value);
-  }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!newName.trim()) {
-      return;
-    }
-    props.editTask(props.id, newName);
-    setNewName("");
-    setEditing(false);
-  }*/
-
-  /*const editingTemplate = (
-    <form className="stack-small" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label className="todo-label" htmlFor={props.id}>
-          New name for {props.name}
-        </label>
-        <input
-          id={props.id}
-          className="todo-text"
-          type="text"
-          value={newName || props.name}
-          onChange={handleChange}
-          ref={editFieldRef}
-        />
-      </div>
-      <div className="btn-group">
-
-        <button
-          type="button"
-          className="btn todo-cancel"
-          onClick={() => setEditing(false)}
-        >
-          Cancel
-          <span className="visually-hidden">renaming {props.name}</span>
-        </button>
-        <button type="submit" className="btn btn__primary todo-edit">
-          Save
-          <span className="visually-hidden">new name for {props.name}</span>
-        </button>
-      </div>
-    </form>
-  );*/
 
   const viewTemplate = (
     <div className="stack-small">
