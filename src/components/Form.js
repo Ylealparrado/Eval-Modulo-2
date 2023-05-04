@@ -17,7 +17,7 @@ function Form(props) {
       <input
         type="text"
         id="new-todo-input"
-        className="input input__lg"
+        className="input input__lg capitalize-first"
         name="text"
         autoComplete="off"
         value={name}

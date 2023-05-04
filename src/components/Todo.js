@@ -34,7 +34,6 @@ export default function Todo(props) {
             className="btn btn__danger"
             onClick={() => props.deleteTask(props.id)}
           >
-            Eliminar <span className="visually-hidden">{props.name}</span>
           </button>
         </div>
     </div>
