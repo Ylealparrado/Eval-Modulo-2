@@ -28,7 +28,7 @@ export default function Todo(props) {
           </label>
         </div>
         <div className="btn-group">
-        
+
           <button
             type="button"
             className="btn btn__danger"

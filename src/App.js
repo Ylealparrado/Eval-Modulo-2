@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Form from "./components/Form";
-import FilterButton from "./components/FilterButton";
+//import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
 import { nanoid } from "nanoid";
 
@@ -18,11 +18,12 @@ const FILTER_MAP = {
   Completed: (task) => task.completed,
 };
 const FILTER_NAMES = Object.keys(FILTER_MAP);
+
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
   const [, setFilter] = useState("All");
 
- 
+
 
   function deleteTask(id) {
     const remainingTasks = tasks.filter((task) => id !== task.id);
@@ -48,22 +49,22 @@ function App(props) {
         key={task.id}
         //toggleTaskCompleted={toggleTaskCompleted}
         deleteTask={deleteTask}
-        //editTask={editTask}    
+        //editTask={editTask}
       />
     ));
 
-  const filterList = FILTER_NAMES.map((name) => (
+  /*const filterList = FILTER_NAMES.map((name) => (
     <FilterButton
          />
-  ));
+  ));*/
 
   function addTask(name) {
     const newTask = { id: "todo-" + nanoid(), name: name, completed: false };
     setTasks([...tasks, newTask]);
   }
 
-  const tasksNoun = taskList.length !== 1 ? "Tareas Ingresadas" : "tareas";
-  const headingText = `${taskList.length} ${tasksNoun} `;
+  const tasksNoun = taskList.length !== 1 ? "Tareas Ingresadas" : "Tarea Ingresada";
+  const headingText = taskList.length !== 0 ? `${taskList.length} ${tasksNoun} ` : "No hay tareas ingresadas";
 
   const listHeadingRef = useRef(null);
   const prevTaskLength = usePrevious(tasks.length);
@@ -75,18 +76,24 @@ function App(props) {
   }, [tasks.length, prevTaskLength]);
 
   return (
-    <div className="todoapp stack-large">
-      <Form addTask={addTask} />
-      <div className="filters btn-group stack-exception">{filterList}</div>
-      <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
-        {headingText}
-      </h2>
-      <ul
-        className="todo-list stack-large stack-exception"
-        aria-labelledby="list-heading">
-        {taskList}
-      </ul>
-    </div>
+    <html>
+      <body  >
+        <div className = "main">
+          <div className="container">
+            <Form addTask={addTask} />
+            <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
+              {headingText}
+            </h2>
+            <ul
+              className="todo-list stack-large stack-exception"
+              aria-labelledby="list-heading">
+              {taskList}
+            </ul>
+          </div>
+        </div>
+
+      </body>
+    </html>
   );
 }
 

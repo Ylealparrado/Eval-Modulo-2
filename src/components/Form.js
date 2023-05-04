@@ -14,11 +14,6 @@ function Form(props) {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className="label-wrapper">
-        <label htmlFor="new-todo-input" className="label__lg">
-          Ingresa la tarea 
-        </label>
-      </h2>
       <input
         type="text"
         id="new-todo-input"
@@ -27,8 +22,9 @@ function Form(props) {
         autoComplete="off"
         value={name}
         onChange={handleChange}
+        placeholder = "Ingresa la tarea"
       />
-      <button type="submit" className="btn btn__primary btn__lg">
+    <button type="submit" className="buttonAdd">
         Añadir
       </button>
     </form>

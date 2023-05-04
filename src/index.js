@@ -4,8 +4,6 @@ import './index.css';
 import App from './App';
 
 const DATA = [
-    { id: "todo-0", name: "Estudiar", completed: true },
-    
   ];
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -15,4 +13,4 @@ root.render(
   </React.StrictMode>
 );
 
-ReactDOM.render(<App subject="Clarice" />, document.getElementById('root'));
+//ReactDOM.render(<App subject="Clarice" />, document.getElementById('root'));
